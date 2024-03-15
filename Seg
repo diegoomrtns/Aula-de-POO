@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Seg {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Digite o tempo em segundos:");
+        int segundo = entrada.nextInt();
+        int[] vetor = horaCerta(segundo);
+        System.out.println("Hora: " + vetor[0] + ", Minuto: " + vetor[1] + ", Segundo: " + vetor[2]);
+    }
+
+    public static int[] horaCerta(int segundo) {
+        int hora = segundo / 3600;
+        segundo %= 3600;
+        int minuto = segundo / 60;
+        segundo %= 60;
+        int vetor[] = {hora, minuto, segundo};
+        return vetor;
+    }
+}
